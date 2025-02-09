@@ -3,21 +3,25 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage'
+    ]
   });
+  
   const page = await browser.newPage();
 
-  // Votre code pour intercepter la réponse et récupérer le JSON...
+  // Intercept the response from the targeted endpoint
   page.on('response', async response => {
     if (response.url().includes('/pegasus/cheapest-fare')) {
       try {
         const data = await response.json();
-        // Par exemple, sauvegarder le JSON dans un fichier
         const fs = require('fs');
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-        console.log('JSON récupéré et sauvegardé.');
+        console.log('JSON retrieved and saved.');
       } catch (error) {
-        console.error('Erreur lors de l’extraction du JSON:', error);
+        console.error('Error extracting JSON:', error);
       }
     }
   });
