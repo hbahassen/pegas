@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer');
       '--disable-gpu',
       '--single-process',
       '--no-zygote',
-      '--disable-http2' // Disable HTTP/2
+      '--disable-http2'
     ],
     ignoreHTTPSErrors: true
   });
@@ -30,7 +30,10 @@ const puppeteer = require('puppeteer');
     }
   });
 
-  await page.goto('https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=USD&dateOption=1&departureDate=2025-03-12&departurePort=BEY&language=fr&returnDate=2025-03-16', { waitUntil: 'networkidle2' });
+  await page.goto('https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=USD&dateOption=1&departureDate=2025-03-12&departurePort=BEY&language=fr&returnDate=2025-03-16', {
+    waitUntil: 'networkidle2',
+    timeout: 60000 // Increase timeout to 60 seconds
+  });
   await page.waitForTimeout(5000);
   await browser.close();
 })();
