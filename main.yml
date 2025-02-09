@@ -20,5 +20,3 @@ jobs:
         run: node fetchData.js
       - name: Afficher le contenu JSON
         run: cat data.json
-      # Vous pouvez ajouter une étape pour déployer le JSON, par exemple
-      # en le copiant vers un dossier accessible par votre site WordPress.
