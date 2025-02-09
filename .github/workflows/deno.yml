@@ -1,42 +1,24 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow will install Deno then run `deno lint` and `deno test`.
-# For more information see: https://github.com/denoland/setup-deno
-
-name: Deno
+name: Récupérer JSON avec Puppeteer
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-
-permissions:
-  contents: read
+  schedule:
+    - cron: '0 * * * *'  # Exécute toutes les heures (ajustez selon vos besoins)
+  workflow_dispatch:
 
 jobs:
-  test:
+  fetch-json:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Setup repo
-        uses: actions/checkout@v4
-
-      - name: Setup Deno
-        # uses: denoland/setup-deno@v1
-        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31  # v1.1.2
+      - uses: actions/checkout@v3
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
         with:
-          deno-version: v1.x
-
-      # Uncomment this step to verify the use of 'deno fmt' on each commit.
-      # - name: Verify formatting
-      #   run: deno fmt --check
-
-      - name: Run linter
-        run: deno lint
-
-      - name: Run tests
-        run: deno test -A
+          node-version: '16'
+      - name: Installer les dépendances
+        run: npm install puppeteer
+      - name: Exécuter le script
+        run: node fetchData.js
+      - name: Afficher le contenu JSON
+        run: cat data.json
+      # Vous pouvez ajouter une étape pour déployer le JSON, par exemple
+      # en le copiant vers un dossier accessible par votre site WordPress.
