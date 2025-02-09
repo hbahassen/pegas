@@ -6,22 +6,25 @@ const puppeteer = require('puppeteer');
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage'
+      '--disable-dev-shm-usage',  // Utilise /tmp à la place de /dev/shm
+      '--disable-gpu',           // Désactive l'accélération GPU
+      '--single-process',        // Tente de lancer Chromium en un seul processus
+      '--no-zygote'              // Désactive le mode zygote
     ]
   });
-  
+
   const page = await browser.newPage();
 
-  // Intercept the response from the targeted endpoint
+  // Votre code pour intercepter et récupérer le JSON
   page.on('response', async response => {
     if (response.url().includes('/pegasus/cheapest-fare')) {
       try {
         const data = await response.json();
         const fs = require('fs');
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-        console.log('JSON retrieved and saved.');
+        console.log('JSON récupéré et sauvegardé.');
       } catch (error) {
-        console.error('Error extracting JSON:', error);
+        console.error('Erreur lors de l’extraction du JSON:', error);
       }
     }
   });
