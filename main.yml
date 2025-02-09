@@ -1,1 +1,24 @@
+name: Récupérer JSON avec Puppeteer
 
+on:
+  schedule:
+    - cron: '0 * * * *'  # Exécute toutes les heures (ajustez selon vos besoins)
+  workflow_dispatch:
+
+jobs:
+  fetch-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Installer les dépendances
+        run: npm install puppeteer
+      - name: Exécuter le script
+        run: node fetchData.js
+      - name: Afficher le contenu JSON
+        run: cat data.json
+      # Vous pouvez ajouter une étape pour déployer le JSON, par exemple
+      # en le copiant vers un dossier accessible par votre site WordPress.
