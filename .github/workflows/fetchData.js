@@ -1,20 +1,27 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage'
+    ]
+  });
+  
   const page = await browser.newPage();
 
-  // Intercepter la réponse de l'endpoint qui vous intéresse
+  // Intercepter la réponse de l'endpoint ciblé
   page.on('response', async response => {
     if (response.url().includes('/pegasus/cheapest-fare')) {
       try {
         const data = await response.json();
-        // Sauvegarder le JSON dans un fichier
+        const fs = require('fs');
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
         console.log('JSON récupéré et sauvegardé.');
       } catch (error) {
-        console.error('Erreur d’extraction du JSON :', error);
+        console.error('Erreur lors de l’extraction du JSON:', error);
       }
     }
   });
@@ -23,4 +30,3 @@ const fs = require('fs');
   await page.waitForTimeout(5000);
   await browser.close();
 })();
-
