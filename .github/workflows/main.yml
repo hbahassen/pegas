@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '23'
       - name: Remove node_modules
         run: rm -rf node_modules
       - name: Install dependencies
