@@ -13,7 +13,7 @@ jobs:
       - name: Installer Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'  # Updated to Node.js 18
       - name: Installer les dépendances
         run: npm install puppeteer
       - name: Exécuter le script
