@@ -9,19 +9,14 @@ const puppeteer = require('puppeteer');
       '--disable-dev-shm-usage',
       '--disable-gpu',
       '--single-process',
-      '--no-zygote'
+      '--no-zygote',
+      '--disable-http2' // Disable HTTP/2
     ],
-    ignoreHTTPSErrors: true // Ignore HTTPS errors
+    ignoreHTTPSErrors: true
   });
 
   const page = await browser.newPage();
 
-  // Set request headers to disable HTTP/2
-  await page.setExtraHTTPHeaders({
-    'Upgrade-Insecure-Requests': '1'
-  });
-
-  // Handle JSON response interception
   page.on('response', async response => {
     if (response.url().includes('/pegasus/cheapest-fare')) {
       try {
