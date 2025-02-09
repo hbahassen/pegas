@@ -1,22 +1,17 @@
-name: Récupérer JSON avec Puppeteer
-
-on:
-  schedule:
-    - cron: '0 * * * *'  # Exécute toutes les heures
-  workflow_dispatch:
-
 jobs:
   fetch-json:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Installer Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Updated to Node.js 18
-      - name: Installer les dépendances
+          node-version: '18'
+      - name: Remove node_modules
+        run: rm -rf node_modules
+      - name: Install dependencies
         run: npm install puppeteer
-      - name: Exécuter le script
+      - name: Run Puppeteer script
         run: node fetchData.js
-      - name: Afficher le contenu JSON
+      - name: Display JSON content
         run: cat data.json
