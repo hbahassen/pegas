@@ -2,7 +2,7 @@ name: Récupérer JSON avec Puppeteer
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Exécute toutes les heures (ajustez selon vos besoins)
+    - cron: '0 * * * *'  # Exécute toutes les heures
   workflow_dispatch:
 
 jobs:
