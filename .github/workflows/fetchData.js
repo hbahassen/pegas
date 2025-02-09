@@ -6,16 +6,22 @@ const puppeteer = require('puppeteer');
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',  // Utilise /tmp à la place de /dev/shm
-      '--disable-gpu',           // Désactive l'accélération GPU
-      '--single-process',        // Tente de lancer Chromium en un seul processus
-      '--no-zygote'              // Désactive le mode zygote
-    ]
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--single-process',
+      '--no-zygote'
+    ],
+    ignoreHTTPSErrors: true // Ignore HTTPS errors
   });
 
   const page = await browser.newPage();
 
-  // Votre code pour intercepter et récupérer le JSON
+  // Set request headers to disable HTTP/2
+  await page.setExtraHTTPHeaders({
+    'Upgrade-Insecure-Requests': '1'
+  });
+
+  // Handle JSON response interception
   page.on('response', async response => {
     if (response.url().includes('/pegasus/cheapest-fare')) {
       try {
