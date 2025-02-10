@@ -24,9 +24,8 @@ jobs:
           # Installer Chromium et Chromedriver (disponible sur ubuntu-latest)
           sudo apt-get update
           sudo apt-get install -y chromium-chromedriver
-          # Parfois, il faut ajouter le chemin du chromedriver dans PATH :
+          # Ajoutez le chemin de Chromedriver au PATH (si nécessaire)
           export PATH=$PATH:/usr/lib/chromium-browser/
 
       - name: Exécuter le script Selenium
-        # Si votre script se trouve à la racine et s'appelle "script.py"
-        run: python script.py
+        run: python .github/workflows/script.py
