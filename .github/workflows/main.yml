@@ -28,3 +28,4 @@ jobs:
 
       - name: Exécuter le script
         run: python fetch_data.py
+.github/workflows/fetch_data.py
