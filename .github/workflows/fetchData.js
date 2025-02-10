@@ -30,7 +30,7 @@ const puppeteer = require('puppeteer');
     }
   });
 
-  await page.goto('https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=USD&dateOption=1&departureDate=2025-03-12&departurePort=BEY&language=fr&returnDate=2025-03-16', {
+  await page.goto('https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=EUR&dateOption=1&departureDate=2025-04-15&departurePort=BEY&language=fr&returnDate=2025-04-30', {
     waitUntil: 'networkidle2',
     timeout: 60000 // Increase timeout to 60 seconds
   });
