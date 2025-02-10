@@ -6,9 +6,12 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+# Chemin de sortie pour le fichier JSON dans le dossier .github/workflows
+output_file = ".github/workflows/pegsu.json"
+
 # --- Configuration de Chrome ---
 chrome_options = Options()
-chrome_options.add_argument("--headless")  # Mode headless pour CI (retirez cette option si vous souhaitez voir le navigateur)
+chrome_options.add_argument("--headless")  # Mode headless pour CI (retirez cette option pour voir le navigateur)
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
@@ -30,7 +33,7 @@ target_url = "https://web.flypgs.com/pegasus/cheapest-fare"
 json_data = None
 
 for request in driver.requests:
-    # On vérifie si la réponse existe et si l'URL est exactement celle recherchée (normalisée pour supprimer les slash finaux)
+    # Vérifier si la réponse existe et si l'URL correspond exactement à celle désirée (normalisée)
     if request.response and request.url.rstrip("/") == target_url.rstrip("/"):
         try:
             # Récupérer le corps de la réponse (en bytes)
@@ -50,10 +53,10 @@ for request in driver.requests:
             print("Erreur lors du traitement de la réponse :", e)
 
 if json_data:
-    # Enregistrer la réponse JSON dans le fichier pegsu.json
-    with open("pegsu.json", "w", encoding="utf-8") as f:
+    # Enregistrer le JSON dans le fichier output (dans le dossier .github/workflows)
+    with open(output_file, "w", encoding="utf-8") as f:
         json.dump(json_data, f, ensure_ascii=False, indent=2)
-    print("Fichier sauvegardé : pegsu.json")
+    print("Fichier sauvegardé :", output_file)
 else:
     print("Aucune réponse JSON trouvée pour l'URL exacte :", target_url)
 
