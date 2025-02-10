@@ -1,13 +1,12 @@
-name: Exécuter le script Playwright
+name: Exécuter le script Selenium
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  run-playwright:
+  run-selenium:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout du code
@@ -21,7 +20,13 @@ jobs:
       - name: Installer les dépendances
         run: |
           python -m pip install --upgrade pip
-          pip install playwright
-          playwright install
-      - name: Exécuter le script fetch_data.py
-        run: python .github/workflows/fetch_data.py
+          pip install selenium selenium-wire
+          # Installer Chromium et Chromedriver (disponible sur ubuntu-latest)
+          sudo apt-get update
+          sudo apt-get install -y chromium-chromedriver
+          # Parfois, il faut ajouter le chemin du chromedriver dans PATH :
+          export PATH=$PATH:/usr/lib/chromium-browser/
+
+      - name: Exécuter le script Selenium
+        # Si votre script se trouve à la racine et s'appelle "script.py"
+        run: python script.py
