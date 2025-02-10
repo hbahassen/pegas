@@ -26,7 +26,7 @@ async def run():
 
         # Navigation vers la page cible
         await page.goto(
-            "https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=EUR&dateOption=1&departureDate=2025-04-15&departurePort=BEY&language=fr&returnDate=2025-04-30",
+            "https://trigodoo.com",
             wait_until="load",  # On attend que la page soit complètement chargée
             timeout=60000       # Timeout de 60 secondes
         )
