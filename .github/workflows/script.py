@@ -1,41 +1,33 @@
-# script.py
-from seleniumwire import webdriver  # Import de Selenium Wire (remplace Selenium WebDriver)
+from seleniumwire import webdriver  # Import de Selenium Wire pour intercepter le trafic
 import time
 
-# Configuration des options pour Chrome
+# Configuration des options de Chrome pour une navigation visible (non-headless)
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')                # Mode headless (sans interface graphique)
-options.add_argument('--no-sandbox')              # Nécessaire dans certains environnements CI
-options.add_argument('--disable-dev-shm-usage')     # Utilise /tmp au lieu de /dev/shm
-options.add_argument('--disable-gpu')             # Désactive l'accélération GPU (optionnel)
+# Ne PAS ajouter l'argument '--headless' pour que le navigateur soit visible
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--window-size=1920,1080')  # Taille de fenêtre pour une meilleure visibilité
 
-# Créer le driver avec Selenium Wire pour intercepter les requêtes réseau
+# Créer le driver Selenium Wire
 driver = webdriver.Chrome(options=options)
-
-# (Optionnel) Vous pouvez définir un "scope" pour filtrer les requêtes, par exemple pour ne capturer que celles qui vous intéressent
-# driver.scopes = ['.*']  # Ici, on laisse toutes les requêtes passer
 
 # URL de la page cible
 url = "https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=EUR&dateOption=1&departureDate=2025-04-15&departurePort=BEY&language=fr&returnDate=2025-04-30"
-
-# Accéder à la page
 driver.get(url)
 
-# Attendre quelques secondes pour laisser le temps aux requêtes (fetch/XHR) de s'exécuter
+# Attendre quelques secondes pour que la page charge et que les requêtes réseau s'exécutent
 time.sleep(10)
 
-# Parcourir toutes les requêtes interceptées
-print("Liste des URL interceptées (toutes requêtes) :")
+print("Liste des requêtes interceptées (fetch/XHR) :")
 for request in driver.requests:
-    # Pour filtrer et n'afficher que les requêtes de type XHR, vous pouvez vérifier l'en-tête "x-requested-with"
-    # Cet en-tête est souvent défini à "XMLHttpRequest" pour les appels AJAX.
     if request.response:
+        # Certains appels XHR incluent l'en-tête 'x-requested-with' avec la valeur 'XMLHttpRequest'
         if request.headers.get('x-requested-with') == 'XMLHttpRequest':
             print("XHR Request:", request.url)
         else:
-            # Vous pouvez également afficher les requêtes de type fetch.
-            # Note : Selenium Wire ne donne pas directement le type "fetch", donc vous pouvez afficher tout ou filtrer selon l'URL.
-            print("Autre requête:", request.url)
+            # Vous pouvez adapter le filtrage en fonction d'autres critères,
+            # ici nous affichons toutes les requêtes pour que vous puissiez examiner leurs URL.
+            print("Requête:", request.url)
 
 # Fermer le navigateur
 driver.quit()
