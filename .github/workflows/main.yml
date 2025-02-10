@@ -3,8 +3,8 @@ name: Run Python Script and Commit JSON
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 7 * * *'   # Exécuter à 08h00 heure locale (07h00 UTC)
-    - cron: '0 11 * * *'  # Exécuter à 12h00 heure locale (11h00 UTC)
+    - cron: '0 7 * * *'
+    - cron: '0 11 * * *'
 
 jobs:
   run-script:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Nécessaire pour pouvoir commiter des changements dans l'historique complet
+          fetch-depth: 0
 
       - name: Cache pip packages
         uses: actions/cache@v3
@@ -38,12 +38,12 @@ jobs:
           export PATH=$PATH:/usr/lib/chromium-browser/
 
       - name: Run Python script
-        run: python .github/workflows/script.py
+        run: python script.py
 
       - name: Commit pegsu.json to repository
         uses: EndBug/add-and-commit@v9
         with:
           message: "Update pegsu.json"
-          add: ".github/workflows/pegsu.json"
+          add: "pegsu.json"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
