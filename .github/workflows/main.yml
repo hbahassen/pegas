@@ -1,23 +1,25 @@
-name: Exécuter le script Selenium
+name: Run Python Script and Upload to Ggle Drive
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *' # Exécuter à 08h00 heure locale (07h00 UTC)
+    - cron: '0 11 * * *' # Exécuter à 12h00 heure locale (11h00 UTC)
 
 jobs:
-  run-selenium:
+  run-script:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout du code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Configuration de Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: 3.9
 
-      - name: Installer les dépendances
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install selenium selenium-wire packaging setuptools blinker==1.6.2 webdriver-manager
@@ -25,5 +27,10 @@ jobs:
           sudo apt-get install -y chromium-chromedriver
           export PATH=$PATH:/usr/lib/chromium-browser/
 
-      - name: Exécuter le script Selenium
+      - name: Add Ggle Drive Credentials
+        run: echo "$GGLE_CREDENTIALS" > credentials.json
+        env:
+          GGLE_CREDENTIALS: ${{ secrets.GGLE_CREDENTIALS }}
+
+      - name: Run Python script
         run: python .github/workflows/script.py
