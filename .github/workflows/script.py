@@ -24,7 +24,7 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 search_url = (
     "https://web.flypgs.com/flexible-search?"
     "adultCount=1&arrivalPort=SAW&currency=USD&dateOption=1&"
-    "departureDate=2025-03-12&departurePort=BEY&language=fr&returnDate=2025-03-16"
+    "departureDate=2025-03-15&departurePort=BEY&language=fr&returnDate=2025-03-19"
 )
 print("Navigation vers :", search_url)
 driver.get(search_url)
