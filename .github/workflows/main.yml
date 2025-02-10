@@ -41,4 +41,5 @@ jobs:
           GGLE_CREDENTIALS: ${{ secrets.GGLE_CREDENTIALS }}
 
       - name: Run Python script
-        run: python script.py
+        run: python .github/workflows/script.py
+
