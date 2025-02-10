@@ -1,0 +1,6 @@
+selenium
+selenium-wire
+packaging
+setuptools
+blinker==1.6.2
+webdriver-manager
