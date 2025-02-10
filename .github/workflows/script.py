@@ -6,8 +6,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-# Chemin de sortie pour le fichier JSON dans le dossier .github/workflows
-output_file = ".github/workflows/pegsu.json"
+# Chemin de sortie pour le fichier JSON à la racine du dépôt
+output_file = "pegsu.json"
 
 # --- Configuration de Chrome ---
 chrome_options = Options()
@@ -53,7 +53,7 @@ for request in driver.requests:
             print("Erreur lors du traitement de la réponse :", e)
 
 if json_data:
-    # Enregistrer le JSON dans le fichier output (dans le dossier .github/workflows)
+    # Enregistrer le JSON dans le fichier pegsu.json à la racine du dépôt
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(json_data, f, ensure_ascii=False, indent=2)
     print("Fichier sauvegardé :", output_file)
