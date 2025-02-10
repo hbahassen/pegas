@@ -1,6 +1,5 @@
 name: Exécuter le script Playwright
 
-# Le workflow s'exécutera à chaque push sur la branche principale et peut être déclenché manuellement.
 on:
   push:
     branches:
@@ -23,9 +22,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install playwright
-          # Installer les navigateurs pour Playwright (à faire une seule fois)
           playwright install
 
-      - name: Exécuter le script
-        run: python fetch_data.py
-.github/workflows/fetch_data.py
+      - name: Exécuter le script fetch_data.py
+        run: python .github/workflows/fetch_data.py
