@@ -23,6 +23,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install playwright
           playwright install
-
-      - name: Exécuter le script
-        run: python fetch_data.py
+      - name: Exécuter le script fetch_data.py
+        run: python .github/workflows/fetch_data.py
