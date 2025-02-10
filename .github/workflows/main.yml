@@ -3,7 +3,7 @@ name: Run Python Script and Upload to Ggle Drive
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 7 * * *' # Exécuter à 08h00 heure locale (07h00 UTC)
+    - cron: '0 7 * * *'  # Exécuter à 08h00 heure locale (07h00 UTC)
     - cron: '0 11 * * *' # Exécuter à 12h00 heure locale (11h00 UTC)
 
 jobs:
@@ -42,3 +42,9 @@ jobs:
 
       - name: Run Python script
         run: python .github/workflows/script.py
+
+      - name: Upload pegsu.json as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pegsu-json
+          path: pegsu.json
