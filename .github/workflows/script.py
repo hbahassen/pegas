@@ -1,34 +1,33 @@
 import time
 import json
-from selenium import webdriver
+from seleniumwire import webdriver  # Import de Selenium Wire pour intercepter le trafic
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from webdriver_manager.chrome import ChromeDriverManager
 
-# --- Configuration de Chrome et du driver ---
+# Configuration des options de Chrome
 chrome_options = Options()
-chrome_options.add_argument("--headless")  # Mode headless pour l'exécution en CI
+chrome_options.add_argument("--headless")  # Vous pouvez retirer cette option pour du mode non-headless
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+chrome_options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
 
-# Configuration des capacités pour récupérer les logs de performance
-caps = DesiredCapabilities.CHROME
-caps["goog:loggingPrefs"] = {"performance": "ALL"}
+# Créer un objet Service qui gère le chemin de ChromeDriver
+service = Service(ChromeDriverManager().install())
 
-# Initialiser le driver avec ChromeDriver Manager
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options, desired_capabilities=caps)
+# Créer le driver en utilisant l'objet service et les options
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
-# --- Navigation sur le site Pegasus ---
-# Remplacez l'URL ci-dessous par celle qui déclenche l'appel fetch/XHR de Pegasus.
+# Accès à la page cible (exemple pour Pegasus)
 url = "https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=USD&dateOption=1&departureDate=2025-03-12&departurePort=BEY&language=fr&returnDate=2025-03-16"
 print("Accès à l'URL :", url)
 driver.get(url)
 
-# Attendre quelques secondes pour laisser le temps aux requêtes réseau de se déclencher
+# Attendre quelques secondes pour que la page charge et que les requêtes réseau soient lancées
 time.sleep(10)
 
-# --- Extraction des logs de performance et détection des URL JSON ---
+# Extraction des logs de performance et détection des URL JSON
 logs = driver.get_log("performance")
 json_urls = []
 
@@ -38,7 +37,7 @@ for entry in logs:
         if "Network.responseReceived" in log_message["method"]:
             response_url = log_message["params"]["response"]["url"]
             mime_type = log_message["params"]["response"].get("mimeType", "")
-            # Filtrer : URL contenant "pegasus" et type MIME "application/json"
+            # Filtrer les URL qui contiennent "pegasus" et qui ont le type MIME "application/json"
             if "pegasus" in response_url.lower() and "application/json" in mime_type.lower():
                 if response_url not in json_urls:
                     json_urls.append(response_url)
