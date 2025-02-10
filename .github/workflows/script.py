@@ -1,39 +1,49 @@
-from seleniumwire import webdriver  # Import de Selenium Wire pour intercepter le trafic
 import time
+import json
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from webdriver_manager.chrome import ChromeDriverManager
 
-# Configuration des options de Chrome pour une navigation visible (non-headless)
-options = webdriver.ChromeOptions()
-# On n'ajoute PAS '--headless' pour que le navigateur soit visible
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--window-size=1920,1080')  # Taille de la fenêtre pour une meilleure visibilité
+# --- Configuration de Chrome et du driver ---
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Mode headless pour l'exécution en CI
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
 
-# IMPORTANT : définir la localisation du binaire Chromium
-# Sur Ubuntu, le binaire est souvent à cet emplacement :
-options.binary_location = '/usr/bin/chromium-browser'
+# Configuration des capacités pour récupérer les logs de performance
+caps = DesiredCapabilities.CHROME
+caps["goog:loggingPrefs"] = {"performance": "ALL"}
 
-# Ajouter un répertoire de données utilisateur unique pour éviter les conflits
-options.add_argument('--user-data-dir=/tmp/unique-user-data-dir')
+# Initialiser le driver avec ChromeDriver Manager
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options, desired_capabilities=caps)
 
-# Créer le driver Selenium Wire
-driver = webdriver.Chrome(options=options)
-
-# URL de la page cible
-url = "https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=EUR&dateOption=1&departureDate=2025-04-15&departurePort=BEY&language=fr&returnDate=2025-04-30"
+# --- Navigation sur le site Pegasus ---
+# Remplacez l'URL ci-dessous par celle qui déclenche l'appel fetch/XHR de Pegasus.
+url = "https://web.flypgs.com/flexible-search?adultCount=1&arrivalPort=SAW&currency=USD&dateOption=1&departureDate=2025-03-12&departurePort=BEY&language=fr&returnDate=2025-03-16"
+print("Accès à l'URL :", url)
 driver.get(url)
 
-# Attendre quelques secondes pour laisser le temps aux requêtes (fetch/XHR) de s'exécuter
+# Attendre quelques secondes pour laisser le temps aux requêtes réseau de se déclencher
 time.sleep(10)
 
-print("Liste des requêtes interceptées (fetch/XHR) :")
-for request in driver.requests:
-    if request.response:
-        # Afficher les requêtes XHR (en filtrant par l'en-tête "x-requested-with" si disponible)
-        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-            print("XHR Request:", request.url)
-        else:
-            # Sinon, afficher toutes les autres requêtes
-            print("Requête:", request.url)
+# --- Extraction des logs de performance et détection des URL JSON ---
+logs = driver.get_log("performance")
+json_urls = []
 
-# Fermer le navigateur
+for entry in logs:
+    try:
+        log_message = json.loads(entry["message"])["message"]
+        if "Network.responseReceived" in log_message["method"]:
+            response_url = log_message["params"]["response"]["url"]
+            mime_type = log_message["params"]["response"].get("mimeType", "")
+            # Filtrer : URL contenant "pegasus" et type MIME "application/json"
+            if "pegasus" in response_url.lower() and "application/json" in mime_type.lower():
+                if response_url not in json_urls:
+                    json_urls.append(response_url)
+                    print("URL JSON détectée :", response_url)
+    except Exception:
+        continue
+
 driver.quit()
