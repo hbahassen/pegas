@@ -1,10 +1,10 @@
-name: Run Python Script and Deploy JSON to GitHub Pages
+name: Run Python Script and Commit JSON
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 7 * * *' # Exécuter à 08h00 heure locale (07h00 UTC)
-    - cron: '0 11 * * *' # Exécuter à 12h00 heure locale (11h00 UTC)
+    - cron: '0 7 * * *'   # Exécuter à 08h00 heure locale (07h00 UTC)
+    - cron: '0 11 * * *'  # Exécuter à 12h00 heure locale (11h00 UTC)
 
 jobs:
   run-script:
@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Nécessaire pour pouvoir commiter des changements dans l'historique complet
 
       - name: Cache pip packages
         uses: actions/cache@v3
@@ -35,21 +37,13 @@ jobs:
           sudo apt-get install -y chromium-chromedriver
           export PATH=$PATH:/usr/lib/chromium-browser/
 
-      - name: Add Ggle Drive Credentials
-        run: echo "$GGLE_CREDENTIALS" > credentials.json
-        env:
-          GGLE_CREDENTIALS: ${{ secrets.GGLE_CREDENTIALS }}
-
       - name: Run Python script
         run: python .github/workflows/script.py
 
-      - name: Prepare public directory
-        run: |
-          mkdir -p public
-          cp pegsu.json public/
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Commit pegsu.json to repository
+        uses: EndBug/add-and-commit@v9
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          message: "Update pegsu.json"
+          add: ".github/workflows/pegsu.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
