@@ -38,7 +38,7 @@ jobs:
           export PATH=$PATH:/usr/lib/chromium-browser/
 
       - name: Run Python script
-        run: python script.py
+        run: python .github/workflows/script.py
 
       - name: Commit pegsu.json to repository
         uses: EndBug/add-and-commit@v9
