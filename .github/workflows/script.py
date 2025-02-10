@@ -12,6 +12,9 @@ options.add_argument('--window-size=1920,1080')  # Taille de la fenêtre pour un
 # Sur Ubuntu, le binaire est souvent à cet emplacement :
 options.binary_location = '/usr/bin/chromium-browser'
 
+# Ajouter un répertoire de données utilisateur unique pour éviter les conflits
+options.add_argument('--user-data-dir=/tmp/unique-user-data-dir')
+
 # Créer le driver Selenium Wire
 driver = webdriver.Chrome(options=options)
 
