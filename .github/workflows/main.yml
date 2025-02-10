@@ -1,4 +1,4 @@
-name: Run Python Script and Upload to Ggle Drive
+name: Run Python Script and Deploy JSON to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -43,8 +43,13 @@ jobs:
       - name: Run Python script
         run: python .github/workflows/script.py
 
-      - name: Upload pegsu.json as artifact
-        uses: actions/upload-artifact@v4
+      - name: Prepare public directory
+        run: |
+          mkdir -p public
+          cp pegsu.json public/
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: pegsu-json
-          path: pegsu.json
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
