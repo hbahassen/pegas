@@ -1,0 +1,644 @@
+{
+  "departureCheapestRoute": {
+    "departure": {
+      "cityName": "Beirut",
+      "portCode": "BEY",
+      "portName": "Beyrouth"
+    },
+    "arrival": {
+      "cityName": "Istanbul",
+      "portCode": "SAW",
+      "portName": "Istanbul Sabiha Gokcen"
+    },
+    "monthlyCheapestList": [
+      {
+        "month": "2025-02",
+        "monthlyCheapestFare": {
+          "currency": "USD",
+          "amount": 72.0
+        }
+      },
+      {
+        "dailyCheapestList": [
+          {
+            "date": "2025-03-01",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 72.0
+            }
+          },
+          {
+            "date": "2025-03-02",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 122.0
+            }
+          },
+          {
+            "date": "2025-03-03",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 95.0
+            }
+          },
+          {
+            "date": "2025-03-04",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-05",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-06",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 72.0
+            }
+          },
+          {
+            "date": "2025-03-07",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-08",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 72.0
+            }
+          },
+          {
+            "date": "2025-03-09",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-10",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-11",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-12",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-13",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 72.0
+            }
+          },
+          {
+            "date": "2025-03-14",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-15",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 72.0
+            }
+          },
+          {
+            "date": "2025-03-16",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-17",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-18",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-19",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-20",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 72.0
+            }
+          },
+          {
+            "date": "2025-03-21",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-22",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 72.0
+            }
+          },
+          {
+            "date": "2025-03-23",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 82.0
+            }
+          },
+          {
+            "date": "2025-03-24",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-25",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-26",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-27",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 83.0
+            }
+          },
+          {
+            "date": "2025-03-28",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 125.0
+            }
+          },
+          {
+            "date": "2025-03-29",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 113.5
+            }
+          },
+          {
+            "date": "2025-03-30",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 88.41
+            }
+          },
+          {
+            "date": "2025-03-31",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 96.91
+            }
+          }
+        ],
+        "month": "2025-03",
+        "monthlyCheapestFare": {
+          "currency": "USD",
+          "amount": 72.0
+        },
+        "cheapestDayList": [
+          "2025-03-01",
+          "2025-03-06",
+          "2025-03-08",
+          "2025-03-13",
+          "2025-03-15",
+          "2025-03-20",
+          "2025-03-22"
+        ]
+      },
+      {
+        "month": "2025-04",
+        "monthlyCheapestFare": {
+          "currency": "USD",
+          "amount": 75.99
+        }
+      }
+    ],
+    "cheapestMonthList": []
+  },
+  "returnCheapestRoute": {
+    "departure": {
+      "cityName": "Istanbul",
+      "portCode": "SAW",
+      "portName": "Istanbul Sabiha Gokcen"
+    },
+    "arrival": {
+      "cityName": "Beirut",
+      "portCode": "BEY",
+      "portName": "Beyrouth"
+    },
+    "monthlyCheapestList": [
+      {
+        "month": "2025-02",
+        "monthlyCheapestFare": {
+          "currency": "USD",
+          "amount": 88.0
+        }
+      },
+      {
+        "dailyCheapestList": [
+          {
+            "date": "2025-03-01",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-02",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-03",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-04",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-05",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-06",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-07",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-08",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-09",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-10",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-11",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-12",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-13",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 88.0
+            }
+          },
+          {
+            "date": "2025-03-14",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 88.0
+            }
+          },
+          {
+            "date": "2025-03-15",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-16",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-17",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-18",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-19",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-20",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-21",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-22",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 78.0
+            }
+          },
+          {
+            "date": "2025-03-23",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-24",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 93.0
+            }
+          },
+          {
+            "date": "2025-03-25",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 104.0
+            }
+          },
+          {
+            "date": "2025-03-26",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 108.5
+            }
+          },
+          {
+            "date": "2025-03-27",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 118.5
+            }
+          },
+          {
+            "date": "2025-03-28",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 134.5
+            }
+          },
+          {
+            "date": "2025-03-29",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 135.0
+            }
+          },
+          {
+            "date": "2025-03-30",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 101.99
+            }
+          },
+          {
+            "date": "2025-03-31",
+            "campaignFare": false,
+            "dailyCheapestFare": {
+              "currency": "USD",
+              "amount": 101.99
+            }
+          }
+        ],
+        "month": "2025-03",
+        "monthlyCheapestFare": {
+          "currency": "USD",
+          "amount": 78.0
+        },
+        "cheapestDayList": [
+          "2025-03-01",
+          "2025-03-02",
+          "2025-03-05",
+          "2025-03-06",
+          "2025-03-07",
+          "2025-03-08",
+          "2025-03-09",
+          "2025-03-12",
+          "2025-03-15",
+          "2025-03-19",
+          "2025-03-20",
+          "2025-03-22"
+        ]
+      },
+      {
+        "month": "2025-04",
+        "monthlyCheapestFare": {
+          "currency": "USD",
+          "amount": 79.99
+        }
+      }
+    ],
+    "cheapestMonthList": []
+  },
+  "filterTagList": [
+    {
+      "tagType": "TIME",
+      "flightTagList": [
+        {
+          "name": {
+            "key": "flightdetails.tag.MORNING",
+            "values": []
+          },
+          "tagType": "MORNING"
+        },
+        {
+          "name": {
+            "key": "flightdetails.tag.NOON",
+            "values": []
+          },
+          "tagType": "NOON"
+        },
+        {
+          "name": {
+            "key": "flightdetails.tag.EVENING",
+            "values": []
+          },
+          "tagType": "EVENING"
+        }
+      ]
+    },
+    {
+      "tagType": "CONNECTED",
+      "flightTagList": [
+        {
+          "name": {
+            "key": "flightdetails.tag.DIRECT",
+            "values": []
+          },
+          "tagType": "DIRECT"
+        },
+        {
+          "name": {
+            "key": "flightdetails.tag.INDIRECT",
+            "values": []
+          },
+          "tagType": "INDIRECT"
+        }
+      ]
+    }
+  ]
+}
