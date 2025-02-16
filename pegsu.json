@@ -301,7 +301,7 @@
         "month": "2025-02",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 114.0
+          "amount": 136.0
         }
       },
       {
@@ -586,7 +586,7 @@
         "month": "2025-04",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 80.99
+          "amount": 79.99
         }
       }
     ],
