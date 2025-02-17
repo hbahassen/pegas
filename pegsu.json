@@ -15,7 +15,7 @@
         "month": "2025-02",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 126.0
+          "amount": 154.0
         }
       },
       {
@@ -33,7 +33,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 104.0
+              "amount": 126.0
             }
           },
           {
@@ -535,7 +535,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 136.0
+              "amount": 164.0
             }
           },
           {
@@ -586,7 +586,7 @@
         "month": "2025-04",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 79.99
+          "amount": 80.99
         }
       }
     ],
