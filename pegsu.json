@@ -129,7 +129,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 84.0
+              "amount": 104.0
             }
           },
           {
@@ -503,7 +503,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 164.0
+              "amount": 194.0
             }
           },
           {
