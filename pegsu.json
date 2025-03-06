@@ -55,7 +55,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 84.0
+              "amount": 105.0
             }
           },
           {
@@ -278,7 +278,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 94.0
+              "amount": 115.0
             }
           },
           {
@@ -294,7 +294,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 94.0
+              "amount": 105.0
             }
           },
           {
@@ -464,8 +464,6 @@
           "amount": 94.0
         },
         "cheapestDayList": [
-          "2025-03-09",
-          "2025-03-11",
           "2025-03-12",
           "2025-03-13",
           "2025-03-14"
