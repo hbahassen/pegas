@@ -31,7 +31,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 96.0
+              "amount": 105.0
             }
           },
           {
@@ -39,7 +39,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 117.5
+              "amount": 105.0
             }
           },
           {
@@ -47,7 +47,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 116.5
+              "amount": 84.0
             }
           },
           {
@@ -63,7 +63,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 117.5
+              "amount": 84.0
             }
           },
           {
@@ -71,7 +71,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 96.0
+              "amount": 84.0
             }
           },
           {
@@ -79,7 +79,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 96.0
+              "amount": 84.0
             }
           },
           {
@@ -87,7 +87,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 96.0
+              "amount": 84.0
             }
           },
           {
@@ -119,7 +119,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 95.0
+              "amount": 84.0
             }
           },
           {
@@ -127,7 +127,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 95.0
+              "amount": 84.0
             }
           },
           {
@@ -143,7 +143,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 117.5
+              "amount": 96.0
             }
           },
           {
@@ -176,7 +176,7 @@
         "month": "2025-04",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 109.99
+          "amount": 98.99
         }
       }
     ],
@@ -206,7 +206,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 167.0
+              "amount": 127.5
             }
           },
           {
@@ -222,7 +222,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 227.0
+              "amount": 127.5
             }
           },
           {
@@ -230,7 +230,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 167.0
+              "amount": 127.5
             }
           },
           {
@@ -238,7 +238,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 128.5
+              "amount": 107.0
             }
           },
           {
@@ -246,7 +246,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 167.0
+              "amount": 116.0
             }
           },
           {
@@ -254,7 +254,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 167.0
+              "amount": 127.5
             }
           },
           {
@@ -270,7 +270,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 197.0
+              "amount": 167.0
             }
           },
           {
@@ -286,7 +286,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 197.0
+              "amount": 167.0
             }
           },
           {
@@ -294,7 +294,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 197.0
+              "amount": 138.0
             }
           },
           {
@@ -310,7 +310,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 197.0
+              "amount": 167.0
             }
           },
           {
@@ -318,7 +318,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 197.0
+              "amount": 167.0
             }
           },
           {
@@ -326,7 +326,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 213.5
+              "amount": 153.5
             }
           },
           {
@@ -349,10 +349,10 @@
         "month": "2025-03",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 127.5
+          "amount": 107.0
         },
         "cheapestDayList": [
-          "2025-03-15"
+          "2025-03-18"
         ]
       },
       {
