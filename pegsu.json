@@ -14,24 +14,16 @@
       {
         "dailyCheapestList": [
           {
-            "date": "2025-03-15",
+            "date": "2025-03-16",
             "flightUnavailabilityCode": "NO_FARE",
             "campaignFare": false
-          },
-          {
-            "date": "2025-03-16",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 105.37
-            }
           },
           {
             "date": "2025-03-17",
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 84.37
+              "amount": 96.37
             }
           },
           {
@@ -153,7 +145,6 @@
           "amount": 84.37
         },
         "cheapestDayList": [
-          "2025-03-17",
           "2025-03-18",
           "2025-03-19",
           "2025-03-20",
@@ -190,17 +181,9 @@
       {
         "dailyCheapestList": [
           {
-            "date": "2025-03-15",
+            "date": "2025-03-16",
             "flightUnavailabilityCode": "NO_FARE",
             "campaignFare": false
-          },
-          {
-            "date": "2025-03-16",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 115.37
-            }
           },
           {
             "date": "2025-03-17",
@@ -231,7 +214,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 115.37
+              "amount": 137.37
             }
           },
           {
@@ -303,7 +286,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 152.87
+              "amount": 166.37
             }
           },
           {
@@ -311,7 +294,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 109.36
+              "amount": 148.36
             }
           },
           {
