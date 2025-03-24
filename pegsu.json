@@ -14,17 +14,9 @@
       {
         "dailyCheapestList": [
           {
-            "date": "2025-03-23",
+            "date": "2025-03-24",
             "flightUnavailabilityCode": "NO_FARE",
             "campaignFare": false
-          },
-          {
-            "date": "2025-03-24",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 95.37
-            }
           },
           {
             "date": "2025-03-25",
@@ -63,7 +55,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 96.37
+              "amount": 117.87
             }
           },
           {
@@ -120,24 +112,16 @@
       {
         "dailyCheapestList": [
           {
-            "date": "2025-03-23",
+            "date": "2025-03-24",
             "flightUnavailabilityCode": "NO_FARE",
             "campaignFare": false
-          },
-          {
-            "date": "2025-03-24",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 307.37
-            }
           },
           {
             "date": "2025-03-25",
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 226.37
+              "amount": 306.37
             }
           },
           {
@@ -145,7 +129,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 256.37
+              "amount": 332.87
             }
           },
           {
@@ -161,7 +145,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 196.37
+              "amount": 256.37
             }
           },
           {
