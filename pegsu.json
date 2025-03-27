@@ -31,7 +31,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 186.37
+              "amount": 156.37
             }
           },
           {
@@ -39,7 +39,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 90.86
+              "amount": 109.36
             }
           },
           {
@@ -47,14 +47,14 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 118.36
+              "amount": 124.37
             }
           }
         ],
         "month": "2025-03",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 90.86
+          "amount": 109.36
         },
         "cheapestDayList": [
           "2025-03-30"
@@ -64,7 +64,7 @@
         "month": "2025-04",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 110.36
+          "amount": 104.37
         }
       }
     ],
@@ -102,7 +102,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 242.87
+              "amount": 306.37
             }
           },
           {
@@ -110,7 +110,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 338.36
+              "amount": 363.86
             }
           },
           {
@@ -118,14 +118,14 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 184.37
+              "amount": 214.37
             }
           }
         ],
         "month": "2025-03",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 184.37
+          "amount": 214.37
         },
         "cheapestDayList": [
           "2025-03-31"
@@ -135,7 +135,7 @@
         "month": "2025-04",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 81.36
+          "amount": 90.86
         }
       }
     ],
