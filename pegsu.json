@@ -14,17 +14,9 @@
       {
         "dailyCheapestList": [
           {
-            "date": "2025-03-27",
+            "date": "2025-03-28",
             "flightUnavailabilityCode": "NO_FARE",
             "campaignFare": false
-          },
-          {
-            "date": "2025-03-28",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 116.87
-            }
           },
           {
             "date": "2025-03-29",
@@ -47,7 +39,7 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 124.37
+              "amount": 118.36
             }
           }
         ],
@@ -64,7 +56,7 @@
         "month": "2025-04",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 104.37
+          "amount": 98.99
         }
       }
     ],
@@ -85,24 +77,16 @@
       {
         "dailyCheapestList": [
           {
-            "date": "2025-03-27",
+            "date": "2025-03-28",
             "flightUnavailabilityCode": "NO_FARE",
             "campaignFare": false
-          },
-          {
-            "date": "2025-03-28",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 566.87
-            }
           },
           {
             "date": "2025-03-29",
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 306.37
+              "amount": 356.0
             }
           },
           {
@@ -118,14 +102,14 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 214.37
+              "amount": 238.36
             }
           }
         ],
         "month": "2025-03",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 214.37
+          "amount": 238.36
         },
         "cheapestDayList": [
           "2025-03-31"
