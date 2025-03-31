@@ -12,29 +12,8 @@
     },
     "monthlyCheapestList": [
       {
-        "dailyCheapestList": [
-          {
-            "date": "2025-03-30",
-            "flightUnavailabilityCode": "NO_FARE",
-            "campaignFare": false
-          },
-          {
-            "date": "2025-03-31",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 178.36
-            }
-          }
-        ],
         "month": "2025-03",
-        "monthlyCheapestFare": {
-          "currency": "USD",
-          "amount": 178.36
-        },
-        "cheapestDayList": [
-          "2025-03-31"
-        ]
+        "flightUnavailabilityCode": "NO_DETAIL"
       },
       {
         "month": "2025-04",
@@ -61,26 +40,18 @@
       {
         "dailyCheapestList": [
           {
-            "date": "2025-03-30",
-            "campaignFare": false,
-            "dailyCheapestFare": {
-              "currency": "USD",
-              "amount": 528.65
-            }
-          },
-          {
             "date": "2025-03-31",
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 288.36
+              "amount": 313.86
             }
           }
         ],
         "month": "2025-03",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 288.36
+          "amount": 313.86
         },
         "cheapestDayList": [
           "2025-03-31"
