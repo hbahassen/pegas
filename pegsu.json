@@ -44,14 +44,14 @@
             "campaignFare": false,
             "dailyCheapestFare": {
               "currency": "USD",
-              "amount": 313.86
+              "amount": 324.81
             }
           }
         ],
         "month": "2025-03",
         "monthlyCheapestFare": {
           "currency": "USD",
-          "amount": 313.86
+          "amount": 324.81
         },
         "cheapestDayList": [
           "2025-03-31"
